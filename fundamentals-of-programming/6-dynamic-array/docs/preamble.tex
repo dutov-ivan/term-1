@@ -1,0 +1,75 @@
+\usepackage{fontspec}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{ukrainian}
+
+% Встановлюємо Times New Roman як основний шрифт
+\setmainfont{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}
+\newfontfamily\cyrillicfonttt{JetBrainsMono Nerd Font}
+
+\usepackage{geometry}
+\geometry{top=25mm,bottom=15mm,left=25mm,right=10mm} % Встановлення полів сторінки
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries\centering}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\bfseries\centering}{}{0pt}{}
+\titleformat{\subsubsection}{\normalfont\bfseries\itshape}{}{0pt}{}
+
+\setlength{\parindent}{12.5mm}  % Встановлення загального абзацного відступу
+\newcommand{\address}{\hspace*{90mm}} % Відступ для адресата
+\newcommand{\approval}{\hspace*{100mm}} % Відступ для «Гриф затвердження»
+\newcommand{\signature}{\hspace*{125mm}} % Відступ для підпису
+
+\usepackage{setspace}
+
+\pagenumbering{arabic} % Встановлення арабської нумерації
+
+\usepackage{amsmath} % Для розширених математичних виразів
+\usepackage{amsthm} % Для середовища доказів
+
+\usepackage{enumitem}
+\setlist[enumerate,2]{label=\theenumi.\arabic*} % Нумерація = попередній.наступний рівень
+\setlist[enumerate,3]{label=\theenumii.\arabic*} % Нумерація = попередній.попередній.наступний рівень
+
+\usepackage{svg} % Для вставки блок-схем у форматі SVG
+\usepackage{float} % Для керування розміщенням блок-схем
+
+% Встановлюємо шрифт JebBrainsMono Nerd Font як моноширинний
+\setmonofont{JetBrainsMono Nerd Font}
+
+% Визначення кольорів, натхнених темою Solarized Light
+\definecolor{background}{HTML}{FFFFFF} % Світлий кремовий
+\definecolor{keyword}{HTML}{268BD2}    % М'який синій
+\definecolor{string}{HTML}{2AA198}     % Бірюзовий
+\definecolor{comment}{HTML}{93A1A1}    % Сірий
+\definecolor{function}{HTML}{859900}   % Оливковий зелений
+\definecolor{variable}{HTML}{B58900}   % Гірчичний жовтий
+\definecolor{type}{HTML}{D33682}       % Пурпуровий
+
+\usepackage{listings}       % Для підсвітки синтаксису
+\usepackage{xcolor}       % Для роботи з кольорами
+
+% Налаштування listings із кастомним шрифтом та кольоровою схемою
+\lstset{
+	basicstyle=\footnotesize\ttfamily,          % Використання \ttfamily для моноширинного шрифту
+	backgroundcolor=\color{background},
+	keywordstyle=\color{keyword}\bfseries,
+	stringstyle=\color{string},
+	commentstyle=\color{comment}\itshape,
+	identifierstyle=\color{variable},
+	emphstyle={\color{function}},
+	numberstyle=\tiny\color{comment},
+	numbers=left,
+	numbersep=5pt,
+	tabsize=4,
+	frame=lines,
+	breaklines=true,
+	xleftmargin=10pt,    % Опційно: корекція лівого відступу
+	xrightmargin=10pt,   % Опційно: корекція правого відступу
+	% Налаштування ширини символів (зменшити при потребі)
+	columns=fullflexible  % Дозволити більшу гнучкість у ширині символів
+}
+
+\usepackage{multicol}
+\usepackage{pgffor}

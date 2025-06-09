@@ -1,0 +1,9 @@
+# ninja log v5
+1	42	1734469242760608326	CMakeFiles/main.dir/src/io/choices.c.o	c4a4d2dabff10d61
+1	33	1734469629637618857	CMakeFiles/main.dir/src/algorithm.c.o	2e1dd6cceb91d3c
+2	43	1734469242760608326	CMakeFiles/main.dir/src/io/validators.c.o	fc6ea65b66bd42ad
+33	66	1734469629669618195	main	f4688905d72afd44
+1	51	1734469242776607713	CMakeFiles/main.dir/src/io/utils.c.o	b6cd9202618f28de
+1	53	1734469242776607713	CMakeFiles/main.dir/src/io/int.c.o	33640954c50e6cbe
+1	53	1734469242776607713	CMakeFiles/main.dir/src/main.c.o	63a21cc11ff778d8
+1	70	1734469242792607099	CMakeFiles/main.dir/src/io/double.c.o	39c0a6bdea6ff4fd

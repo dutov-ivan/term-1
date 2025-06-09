@@ -1,0 +1,96 @@
+% !TEX program = lualatex
+\documentclass[a4paper,12pt]{extarticle}
+\usepackage{hyperref}
+
+\input{preamble}
+
+\newcommand{\labnumber}{9}
+\newcommand{\labtopic}{Робота з файлами.}
+\newcommand{\labtask}{Написати програму, яка виконує наступні дії:}
+\newcommand{\labdate}{«2» січня 2025 р.}
+
+\newcommand{\includelistings}[3]{%
+	\foreach \filename in {#1} {%
+		\subsubsection{#2/\filename}%
+		\lstinputlisting[language=#3]{#2/\filename}%
+	}%
+}
+
+\newcommand{\img}[1]{%
+  \resizebox{\textwidth}{!}{\includegraphics{img/#1}}\\%
+}
+
+\begin{document}
+
+\doublespacing
+\input{title}
+\singlespacing
+
+\section{Комп'ютерний практикум №\labnumber}
+\vspace{-10pt}
+\begin{center}
+	\emph{\textbf{Тема:} \labtopic}
+\end{center}
+\vspace{-5pt}
+
+\textbf{Завдання:}\\
+\par\labtask
+\begin{enumerate}
+	\item Створення файлу.
+	\item Відкриття вже створеного файлу та завантаження даних із файлу.
+	\item Видалення файлу.
+	\item Запис в файл даних, введених з клавіатури користувачем.
+	\item Зчитування запису(ів) із файлу і виведення їх на екран.
+	\item Редагування запису з файлу.
+	\item Впорядкування (на вибір користувача, за зростанням або спаданням) записів в файлі за полями: назва області, площа, кількість населення.
+	\item Вставка у впорядкований файл записів так, щоб файл залишився впорядкованим.
+	\item Видалення запису з файлу.
+\end{enumerate}
+
+\subsection{Текст програми}
+\includelistings{CMakeLists.txt}{..}{bash}
+\includelistings{main.c}{../src}{c}
+\includelistings{common.h, fileContext.c, sort.c, stack.c}{../src/common}{c}
+\includelistings{menu.h, default.c, menu.c}{../src/menu}{c}
+\includelistings{actions.h, files.c, records.c, misc.c, regions.c, utils.h, utils.c}{../src/actions}{c}
+\includelistings{io.h, number.c, string.c, choices.c, validators.c, utils.h, utils.c}{../src/io}{c}
+
+\subsection{Введені та одержані результати}
+
+\subsubsection{Створення файлу}
+\img{create_file.png}
+\subsubsection{Створення записів}
+\img{add_record.png}
+\subsubsection{Зчитування всіх записів}
+\img{read_all_records.png}
+\subsubsection{Видалення запису}
+\img{delete_record.png}
+\subsubsection{Редагування запису}
+\img{edit_record.png}
+\subsubsection{Зчитування запису}
+\img{read_record.png}
+\subsubsection{Впорядкування записів}
+\img{sort_name_ascending.png}\\
+\img{sort_area_descending.png}\\
+\img{sort_population_ascending.png}
+\subsubsection{Вставка у впорядкований файл} % TODO: Do I need to show all the error conditions? 
+\img{insert_record}
+\subsubsection{Видалення файлу} % TODO: Do I need to show my filesystem?
+\img{delete_file.png}
+\subsubsection{Файл без сигнатури}
+\img{error_signature.png}
+\subsubsection{Неправильне ім'я файла}
+\img{errors_filename.png}
+\subsubsection{Неправильно відформатований вміст файла}
+\img{errors_reading.png}\\
+\img{errors_file_contents.png}
+\subsubsection{Використання невідсортованого файлу для вставки}
+\img{file_without_sort1.png}\\
+\img{file_without_sort2.png}
+\subsubsection{Читання, редагування, видалення записів, що не існують}
+\img{errors_without_file.png}
+
+
+\emph{\textbf{Висновки:}} Програма працює коректно. Програма вирішує поставлене завдання.
+
+\end{document}
